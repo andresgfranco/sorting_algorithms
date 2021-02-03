@@ -69,5 +69,4 @@ void insertion_sort_list(listint_t **list)
 			tmp = left ? left->next : NULL;
 		}
 	}
-
 }
