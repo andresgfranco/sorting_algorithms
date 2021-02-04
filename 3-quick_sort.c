@@ -42,13 +42,13 @@ int partition(int *array, int low, int high, int size)
 
 	for (j = low ; j <= high; j++)
 	{
-		if (arr[j] <= pivot)
+		if (array[j] <= pivot)
 		{
 			i++;
 			if (i != j)
 			{
-				swap_array(arr, i, j);
-				print_array(arr, size);
+				swap_array(array, i, j);
+				print_array(array, size);
 			}
 		}
 	}
