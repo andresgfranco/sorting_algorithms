@@ -35,7 +35,10 @@ void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
 
-
+/**---SECONDARY FUNCTIONS PROTOTYPES---**/
+int partition(int *array, int low, int high, int size);
+void swap_array(int *array, size_t j, size_t k);
+void QuickSortAlgo(int *array, int low, int hight, int size);
 
 
 

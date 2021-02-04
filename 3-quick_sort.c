@@ -1,18 +1,22 @@
 #include "sort.h"
-int partition(int *array, int low, int high, int size);
-void swap_array(int *array, size_t j, size_t k);
-void modifyQuickSort(int *arr, int low, int high, int size);
+/**
+ * quick_sort - Algorithm Quick Sort
+ *
+ * @array: Pointer that point to an array
+ * @size: size of the array
+**/
 
+void quick_sort(int *array, size_t size)
+{
+	QuickSortAlgo(array, 0, size - 1, size);
+}
 
 /**
  * swap_array - Swap two elements in an array
- *
  * @array: Pointer that point to an array
  * @j: This is the index to swap with the index k
  * @k: This is the index to swap with the index j
- *
- */
-
+**/
 void swap_array(int *array, size_t j, size_t k)
 {
 	int temp;
@@ -22,32 +26,18 @@ void swap_array(int *array, size_t j, size_t k)
 	array[k] = temp;
 }
 
-/**
- * quick_sort - Algorithm Quick Sort
- *
- * @array: Pointer that point to an array
- * @size: The size of the array
- *
- */
-void quick_sort(int *array, size_t size)
-{
-	modifyQuickSort(array, 0, size - 1, size);
-}
 
 /**
  * partition - Function that implement the Lomuto Partition Scheme
- *
- * @arr: Pointer that point to an array
+ * @array: Pointer that point to an array
  * @low: The minimum index
  * @high: The maximum index
  * @size: The size of the array
- *
  * Return: The number of the partition
- */
-
-int partition(int *arr, int low, int high, int size)
+**/
+int partition(int *array, int low, int high, int size)
 {
-	int pivot = arr[high];
+	int pivot = array[high];
 	int j, i = (low  - 1);
 
 	for (j = low ; j <= high; j++)
@@ -66,22 +56,20 @@ int partition(int *arr, int low, int high, int size)
 }
 
 /**
- * modifyQuickSort - Algorithm Quick Sort
- *
- * @arr: Pointer that point to an array
+ * QuickSortAlgo - Algorithm Quick Sort
+ * @array: Pointer that point to an array
  * @low: The minimum index
  * @high: The maximum index
  * @size: The size of the array
- *
- */
-void modifyQuickSort(int *arr, int low, int high, int size)
+**/
+void QuickSortAlgo(int *array, int low, int high, int size)
 {
 	if (low < high)
 	{
-		int pi = partition(arr, low, high, size);
+		int pi = partition(array, low, high, size);
 
-		modifyQuickSort(arr, low, pi - 1, size);
-		modifyQuickSort(arr, pi + 1, high, size);
+		QuickSortAlgo(array, low, pi - 1, size);
+		QuickSortAlgo(array, pi + 1, high, size);
 	}
 }
 
