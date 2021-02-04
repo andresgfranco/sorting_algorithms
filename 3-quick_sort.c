@@ -5,7 +5,7 @@ void modifyQuickSort(int *arr, int low, int high, int size);
 
 
 /**
- * swap_Array - Swap two elements in an array
+ * swap_array - Swap two elements in an array
  *
  * @array: Pointer that point to an array
  * @j: This is the index to swap with the index k
